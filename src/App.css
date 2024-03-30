@@ -1,0 +1,82 @@
+.custom-underline {
+  position: relative;
+}
+
+.prose {
+  max-width: 75ch !important;
+}
+
+.custom-underline:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: #7d33db;
+  border-radius: 4px;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 0px rgba(135, 43, 255, 0);
+    opacity: 0.3;
+  }
+  to {
+    box-shadow: 0px 0px 10px 2px rgba(210, 51, 241, 1);
+    opacity: 1;
+  }
+}
+
+.icon-glow {
+  animation: glow 0.6s forwards;
+  animation-delay: 0.65s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+.icon-1 {
+  animation-delay: 0s;
+}
+.icon-2 {
+  animation-delay: 1.2s;
+}
+.icon-3 {
+  animation-delay: 2.3s;
+}
+.icon-4 {
+  animation-delay: 0.17s;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.spotlight::before {
+  content: "";
+  position: absolute;
+  opacity: 0.8;
+  top: -350%;
+  left: -50%;
+  right: -50%;
+  bottom: -350%;
+  background: radial-gradient(
+    at center,
+    rgba(138, 132, 190, 0.12) 0%,
+    rgba(42, 45, 51, 0.4) 20%,
+    rgba(25, 27, 39, 0) 70%
+  );
+  z-index: -1;
+}
