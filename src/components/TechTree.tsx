@@ -1,12 +1,7 @@
 import React from "react";
 import AnimatedPath from "./AnimatedPath";
 import icons from "@/data/icons";
-
-enum IconSet {
-  FRONTEND = "Frontend Skills",
-  BACKEND = "Backend Skills",
-  TOOLING = "Tooling",
-}
+import { IconSet } from "@/types/IconSet";
 
 interface TechTreeProps {
   iconFilter: IconSet;
