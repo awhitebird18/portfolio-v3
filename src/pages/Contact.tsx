@@ -77,9 +77,11 @@ const Contact = () => {
           <form
             name="contact"
             data-netlify="true"
+            method="post"
             onSubmit={form.handleSubmit(onSubmit)}
             className="space-y-4 max-w-xl w-full mx-auto"
           >
+            <input type="hidden" name="contact" value="contact" />
             <FormField
               control={form.control}
               name="name"
