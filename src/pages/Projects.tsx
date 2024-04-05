@@ -7,7 +7,7 @@ const Projects = () => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
   return (
-    <div className="container">
+    <div>
       <Header
         title="Featured Projects."
         subtitle="Here are some of my best projects created from the ground up."
@@ -15,7 +15,12 @@ const Projects = () => {
 
       <div className="flex flex-col items-center justify-center gap-36 relative">
         {projects.map((project, index) => (
-          <div className={`flex justify-between gap-20 ${index % 2 && "flex-row-reverse"}`}>
+          <div
+            key={project.id}
+            className={`flex flex-col-reverse ${
+              index % 2 ? "lg:flex-row-reverse" : "lg:flex-row"
+            } justify-between gap-4 lg:gap-20 ${index % 2 && "flex-row-reverse"}`}
+          >
             <div className="flex flex-col prose dark:prose-invert">
               <div className="flex justify-between">
                 <h2 className="text-3xl">{project.title}</h2>
@@ -23,7 +28,7 @@ const Projects = () => {
               <p className="mb-8">{project.description}</p>
               <div className="flex flex-col gap-6 prose dark:prose-invert mt-4">
                 {project.points.map((point) => (
-                  <div className="flex gap-6">
+                  <div key={point.title} className="flex gap-6">
                     <div className="flex-shrink-0">
                       <img src={point.icon} className="m-0" />
                     </div>
@@ -41,7 +46,7 @@ const Projects = () => {
                 </Button>
               </div>
             </div>
-            <div className="w-5/12 flex-shrink-0">
+            <div className="self-center w-3/4 lg:w-5/12 flex-shrink-0">
               <img src={project.image} className="w-full" />
             </div>
           </div>

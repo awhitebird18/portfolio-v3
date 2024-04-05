@@ -9,4 +9,5 @@ export type Icon = {
   y: number;
   d: string;
   strokeUrl: string;
+  segments: { command: string; value: string }[];
 };

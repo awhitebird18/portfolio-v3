@@ -70,7 +70,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="container h-[calc(100vh-12rem)] flex flex-col justify-center">
+    <div className="h-[calc(100vh-12rem)] flex flex-col justify-center">
       <Header title="Contact." subtitle="Feel free to leave me a note below!" />
       <div className="flex flex-col items-center justify-center mb-16">
         <Form {...form}>

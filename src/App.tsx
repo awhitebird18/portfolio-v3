@@ -11,38 +11,39 @@ import Tech from "./pages/Tech";
 import SectionContainer from "./layout/SectionContainer";
 import { useNavigation } from "./hooks/useNavigation";
 import NavTypes from "./types/navTypes";
+import "./lib/scalePathSegments";
 
 function App() {
   const { current, handleNavigate, refs } = useNavigation();
 
   return (
-    <div className="dark font-mono">
+    <div className="dark font-mono overflow-hidden">
       <Topbar handleNavigate={handleNavigate} currentSection={current} />
-
       <SectionContainer ref={refs[NavTypes.HOME]}>
         <Hero handleNavigate={handleNavigate} />
       </SectionContainer>
+      <div className="container">
+        <SectionContainer ref={refs[NavTypes.PROFILE]}>
+          <About />
+        </SectionContainer>
 
-      <SectionContainer ref={refs[NavTypes.PROFILE]}>
-        <About />
-      </SectionContainer>
+        <SectionContainer ref={refs[NavTypes.TECH]}>
+          <Tech />
+        </SectionContainer>
 
-      <SectionContainer ref={refs[NavTypes.TECH]}>
-        <Tech />
-      </SectionContainer>
+        <SectionContainer ref={refs[NavTypes.PROJECTS]}>
+          <Projects />
+        </SectionContainer>
 
-      <SectionContainer ref={refs[NavTypes.PROJECTS]}>
-        <Projects />
-      </SectionContainer>
+        <SectionContainer ref={refs[NavTypes.RESUME]}>
+          <Resume />
+        </SectionContainer>
 
-      <SectionContainer ref={refs[NavTypes.RESUME]}>
-        <Resume />
-      </SectionContainer>
-
-      <SectionContainer ref={refs[NavTypes.CONTACT]} isLast>
-        <Contact />
-        <Footer />
-      </SectionContainer>
+        <SectionContainer ref={refs[NavTypes.CONTACT]} isLast>
+          <Contact />
+          <Footer />
+        </SectionContainer>
+      </div>
 
       <Toaster />
     </div>

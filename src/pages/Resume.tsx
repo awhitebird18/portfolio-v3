@@ -3,7 +3,7 @@ import resume from "@/data/resume";
 
 const Resume = () => {
   return (
-    <div className="container">
+    <div>
       <Header
         title="Resume."
         subtitle="Overview of my development career with milestones and achievements."
@@ -11,8 +11,8 @@ const Resume = () => {
 
       <div className="container flex flex-col gap-24 w-full">
         {resume.map((entry) => (
-          <div className="flex gap-12 mx-auto">
-            <div className="w-20 h-20 bg-[#22242C] border-[#363946] border p-2 rounded-xl flex-shrink-0">
+          <div key={entry.id} className="flex gap-12 mx-auto">
+            <div className="hidden md:block w-20 h-20 bg-[#22242C] border-[#363946] border p-2 rounded-xl flex-shrink-0">
               <img src={entry.icon} className="w-full h-full" />
             </div>
             <div className="prose dark:prose-invert !max-w-none">
@@ -25,7 +25,7 @@ const Resume = () => {
               </div>
               <div className="flex flex-col gap-7">
                 {entry.points.map((point) => (
-                  <div>
+                  <div key={point.title}>
                     <h4 className="m-0 text-lg">{point.title}</h4>
                     <p>{point.description}</p>
                   </div>
