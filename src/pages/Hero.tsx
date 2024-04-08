@@ -30,12 +30,12 @@ const Hero = ({ handleNavigate }: { handleNavigate: (id: NavTypes) => void }) =>
             </Button>
           </div>
         </div>
-        <div className="flex w-full flex-shrink-0 h-full absolute right-0 top-0 opacity-40 md:opacity-100">
+        <div className="opacity-40 md:opacity-100">
           <div
-            className="absolute -translate-y-1/2 top-1/2 "
-            style={{ height: "130vh", maxHeight: "1250px", right: "-7rem", top: "54vh" }}
+            className="absolute -translate-y-1/2 top-1/2 -right-72 w-max"
+            style={{ height: "130vh" }}
           >
-            <img src={HeroBackground} style={{ height: "100%", objectFit: "cover" }} />
+            <img src={HeroBackground} style={{ objectFit: "contain", height: "100%" }} />
           </div>
           <img
             src={ReactIcon}
